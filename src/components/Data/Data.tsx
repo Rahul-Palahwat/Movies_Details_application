@@ -1,6 +1,4 @@
-import { Badge, Button, Flex, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../redux'
+import { Badge, Flex, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react'
 interface Props {
   idx: number
   item: any
@@ -30,13 +28,6 @@ const Data: React.FC<Props> = ({ idx,item }) => {
               </Flex>
             </Flex>
           </ModalBody>
-
-          {/* <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant='ghost'>Secondary Action</Button>
-          </ModalFooter> */}
         </ModalContent>
       </Modal>
     </>

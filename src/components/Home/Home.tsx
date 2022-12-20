@@ -8,12 +8,10 @@ import { getTotalItems } from '../../redux/reducers/details'
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const { getDataStatus, items } = useAppSelector((state) => state.data_all)
-  // console.log("hello data", items);
   useEffect(() => {
     dispatch(getTotalItems({}))
   }, [])
   useEffect(() => {
-    console.log("Hello", items)
   }, [getDataStatus,items])
 
   return (
@@ -21,7 +19,7 @@ const Home: React.FC = () => {
       <Header />
       <Flex  direction={"column"} width={"100%"} className="grid" pl="121px" pr="121px" pt="60px">
       <Grid templateColumns='repeat(4, 1fr)' gap={5}>
-        {getDataStatus == "SUCCESS" ? 
+        {getDataStatus === "SUCCESS" ? 
       items.results.map((item: any , idx:number) => (<GridItem key={idx} width="100%"><Data idx={idx} item={item}/></GridItem>))
       :
       ""}
